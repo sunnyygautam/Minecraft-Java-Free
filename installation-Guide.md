@@ -12,10 +12,10 @@ This guide covers setting up a local Minecraft Java Edition server, configuring 
 
 To host a local modded survival server and connect to it using TLauncher, ensure you have the following downloaded and installed:
 
-* **Java Runtime Environment (JRE)**: Compatible with your server version (e.g., Java 25 for modern snapshots/releases).
+* **Java Runtime Environment (JRE)**: Compatible with your server version (e.g., Java 25 for modern snapshots/releases) - [Java 21 Official download link](https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.exe).
 * **Fabric Server Launcher**: Downloaded from the [Fabric Official Website](https://fabricmc.net/).
 * **TLauncher**: Used as your game client gateway. Download it safely from the [TLauncher Official Website](https://tlauncher.org/).
-
+* **Mods for Guns**: Downloaded from the [Just Enough Guns New(unofficial port)](https://modrinth.com/mod/just-enough-guns-neoforge).
 ---
 
 ## 📥 2. Installation & Directory Structure

@@ -13,36 +13,6 @@ This guide covers setting up a local Minecraft Java Edition server, configuring 
 To host a local modded survival server and connect to it using TLauncher, ensure you have the following downloaded and installed:
 
 * **Java Runtime Environment (JRE)**: Compatible with your server version (e.g., Java 25 for modern snapshots/releases) - [Java 21 Official download link](https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.exe).
-* PowerShell commands for java 21.
-# 1. Define the direct link and a temporary download location
-```powershell
-$url = "https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.exe"
-$output = "$env:TEMP\jdk21_installer.exe"
-
-# 2. Add a standard User-Agent header to bypass Oracle's 403 firewall block
-$userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-
-Write-Host "Downloading Java 21 (LTS) Installer..." -ForegroundColor Cyan
-
-try {
-    # 3. Use Invoke-WebRequest with the browser User-Agent
-    Invoke-WebRequest -Uri $url -OutFile $output -UserAgent $userAgent
-    
-    if (Test-Path $output) {
-        Write-Host "Installing Java 21 silently..." -ForegroundColor Cyan
-        
-        # 4. Run the installer silently and wait for it to finish
-        Start-Process -FilePath $output -ArgumentList "/s" -Wait
-        
-        # 5. Clean up the installer file
-        Remove-Item $output
-        Write-Host "Java 21 Installation Successfully Completed!" -ForegroundColor Green
-    }
-}
-catch {
-    Write-Host "An error occurred during download: $_" -ForegroundColor Red
-}
-```
 * **Fabric Server Launcher**: Downloaded from the [Fabric Official Website](https://fabricmc.net/).
 * **TLauncher**: Used as your game client gateway. Download it safely from the [TLauncher Official Website](https://tlauncher.org/).
 * **Mods for Guns**: Downloaded from the [Just Enough Guns New(unofficial port)](https://modrinth.com/mod/just-enough-guns-neoforge).

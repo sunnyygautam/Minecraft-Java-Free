@@ -42,7 +42,7 @@ Once installed, point your terminal directly to your Java 25 executable. For exa
 
 ### **B. Client-Side (TLauncher) Installation**
 
-1. Open TLauncher and select the **Fabric profile** matching your game version (e.g., Fabric 26.3) from the version dropdown menu.
+1. Open `TLauncher` and select the **Fabric profile** matching your game version (e.g., Fabric 26.3) from the version dropdown menu.
 2. Open your client's `.minecraft` directory by clicking the folder icon near the version selection. Navigate to or create the **`mods`** folder at:
 ```text
 C:\Users\<Your-Username>\AppData\Roaming\.minecraft\mods
@@ -73,12 +73,12 @@ For custom weapon mods (such as *Just Enough Guns* / *JEG*) to function smoothly
 
 1. **Start the Server**: Open PowerShell inside your server directory and boot up the server via command:
 ```powershell
-java -Xmx2G -jar fabric-server-launch.jar nogui
+java --enable-native-access=ALL-UNNAMED -Xmx4G -Xms2G -jar fabric-server-launch.jar nogui
 
 ```
 
 
-2. **Launch the Client**: Open TLauncher, ensure your profile is explicitly set to **Fabric** (matching your server version), and click *Enter the Game*.
+2. **Launch the Client**: Open `TLauncher`, ensure your profile is explicitly set to **Fabric** (matching your server version), and click *Enter the Game*.
 3. **Join Multiplayer**: Navigate to `Multiplayer` -> `Direct Connection` (or add a server) and connect using your loopback address:
 ```text
 127.0.0.1

@@ -16,6 +16,19 @@ To host a local modded survival server and connect to it using TLauncher, ensure
 * **Fabric Server Launcher**: Downloaded from the [Fabric Official Website](https://fabricmc.net/).
 * **TLauncher**: Used as your game client gateway. Download it safely from the [TLauncher Official Website](https://tlauncher.org/).
 * **Mods for Guns**: Downloaded from the [Just Enough Guns New(unofficial port)](https://modrinth.com/mod/just-enough-guns-neoforge).
+* 1. **Download and Install Java 21/25:**
+Go to an official provider like [Eclipse Temurin (Adoptium)](https://adoptium.net/) or Oracle, download and install **Java 21/25** for Windows.
+* 2. **Run it with the Java 25 Path:**
+Once installed, point your terminal directly to your Java 25 executable. For example:
+```cmd
+& "C:\Program Files\Eclipse Adoptium\jdk-25.x.x.x-hotspot\bin\java.exe" -Xmx4G -Xms4G -jar .\server.jar nogui
+
+```
+
+
+*(Make sure to check your actual installation directory under `C:\Program Files\Eclipse Adoptium\` or `C:\Program Files\Java\` to match the exact path).*
+
+Alternatively, if you want to use a standard Minecraft server version that runs smoothly on **Java 21**, download a version like **1.21.x** instead of the newer release requiring Java 25.
 ---
 
 ## 📥 2. Installation & Directory Structure
@@ -125,16 +138,3 @@ Use these controls directly in your server console (without a slash `/`) or in-g
 
 ```
 
-1. **Download and Install Java 25:**
-Go to an official provider like [Eclipse Temurin (Adoptium)](https://adoptium.net/) or Oracle, download and install **Java 25** for Windows.
-2. **Run it with the Java 25 Path:**
-Once installed, point your terminal directly to your Java 25 executable. For example:
-```cmd
-& "C:\Program Files\Eclipse Adoptium\jdk-25.x.x.x-hotspot\bin\java.exe" -Xmx4G -Xms4G -jar .\server.jar nogui
-
-```
-
-
-*(Make sure to check your actual installation directory under `C:\Program Files\Eclipse Adoptium\` or `C:\Program Files\Java\` to match the exact path).*
-
-Alternatively, if you want to use a standard Minecraft server version that runs smoothly on **Java 21**, download a version like **1.21.x** instead of the newer release requiring Java 25.

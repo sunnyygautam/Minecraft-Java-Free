@@ -37,7 +37,8 @@ Once installed, point your terminal directly to your Java 25 executable. For exa
 
 1. Create a dedicated folder for your server (e.g., `D:\Games\Minecraft`).
 2. Place your `fabric-server-launch.jar` file inside this directory.
-3. Create a **`mods`** folder inside `D:\Games\Minecraft\` to store your backend server mod files.
+3. Place your `server.jar` file inside this directory. You will get from Official website.
+4. Create a **`mods`** folder inside `D:\Games\Minecraft\` to store your backend server mod files.
 
 ### **B. Client-Side (TLauncher) Installation**
 

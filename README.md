@@ -1,11 +1,138 @@
-# Minecraft Java Edition Free
+# Minecraft Java Edition: Local Server & Fabric Modding Guide
 
-*YOU NEED TO INSTALL/HAVE LATEST VERSION OF JAVASCRIPT*
+This guide covers setting up a local Minecraft Java Edition server, configuring TLauncher, installing custom content loader dependencies, adding weapon mods safely, and utilizing essential server management commands.
 
-Download - https://www.java.com/en/download/
+---
 
-NOTICE: THIS IS NOT MINE I'M JUST SAVING YOUR TIME SO THAT YOU DONT HAVE TO GO THROUGH LINKVERISE ADF.LY ECT.
+## 🛠️️ 1. What is Required to Get Started
 
-I believe the original creator is H2O - https://www.youtube.com/channel/UCYEDYr_R1UWc-xgNE5hDQjQ
+To host a local modded survival server and connect to it using TLauncher, ensure you have the following downloaded and installed:
 
-If you want to install it from the original shady website go ahead - https://mega.nz/file/7ctmGK4a#5lWpnMEbVgOpH86jaUdnA4jF40BD7SQ5lgfp6uGPXMs
+* **Java Runtime Environment (JRE)**: Compatible with your server version (e.g., Java 25 for modern snapshots/releases) - [Java 21 Official download link](https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.exe).
+* **Fabric Server Launcher**: Downloaded from the [Fabric Official Website](https://fabricmc.net/).
+* **TLauncher**: Used as your game client gateway. Download it safely from the [TLauncher Official Website](https://tlauncher.org/).
+* **Mods for Guns**: Downloaded from the [Just Enough Guns New(unofficial port)](https://modrinth.com/mod/just-enough-guns-neoforge).
+* **Optional**:
+  1. **Download and Install Java 21/25:**
+Go to an official provider like [Eclipse Temurin (Adoptium)](https://adoptium.net/) or Oracle, download and install **Java 21/25** for Windows.
+  2. **Run it with the Java 25 Path:**
+Once installed, point your terminal directly to your Java 25 executable. For example:
+```cmd
+& "C:\Program Files\Eclipse Adoptium\jdk-25.x.x.x-hotspot\bin\java.exe" -Xmx4G -Xms4G -jar .\server.jar nogui
+
+```
+* Minecraft Backup files from my machine: [Minecraft-Backup - Google Drive](https://drive.google.com/drive/folders/1ZHw3i-U6orAgEEHHLr02VTNUj8ZVFCTk?usp=drive_link).
+
+*(Make sure to check your actual installation directory under `C:\Program Files\Eclipse Adoptium\` or `C:\Program Files\Java\` to match the exact path).*
+
+* Alternatively, if you want to use a standard Minecraft server version that runs smoothly on **Java 21**, download a version like **1.21.x** instead of the newer release requiring Java 25.
+---
+
+## 📥 2. Installation & Directory Structure
+
+### **A. Server-Side Installation**
+
+1. Create a dedicated folder for your server (e.g., `D:\Games\Minecraft`).
+2. Place your `fabric-server-launch.jar` file inside this directory.
+3. Place your `server.jar` file inside this directory. You will get from Official website.
+4. Create a **`mods`** folder inside `D:\Games\Minecraft\` to store your backend server mod files.
+
+### **B. Client-Side (TLauncher) Installation**
+
+1. Open `TLauncher` and select the **Fabric profile** matching your game version (e.g., Fabric 26.3) from the version dropdown menu.
+2. Open your client's `.minecraft` directory by clicking the folder icon near the version selection. Navigate to or create the **`mods`** folder at:
+```text
+C:\Users\<Your-Username>\AppData\Roaming\.minecraft\mods
+
+```
+
+
+3. Ensure that **identical mod `.jar` files** are present in both your server's `mods` folder and your client's `mods` folder to avoid network mismatch or registry rejection errors.
+
+
+
+---
+
+## 🧩 3. Essential Mods & Dependencies
+
+For custom weapon mods (such as *Just Enough Guns* / *JEG*) to function smoothly, you must include the core library dependencies alongside the mod package:
+
+* **[Fabric API](https://modrinth.com/mod/fabric-api)**: Core foundational API required by almost all Fabric mods.
+* **[GeckoLib](https://modrinth.com/mod/geckolib)**: Animation library required for custom item modeling and rendering.
+* **Just Enough Guns (JEG)**: The firearm gameplay modification package.
+
+> **⚠️ Important Troubleshooting Rule:**
+> Ensure weapon mods are placed strictly inside the **`mods`** folder as `.jar` files. Avoid placing client libraries or core mods into the world `datapacks` folder, as mismatched registry structures will trigger JSON parsing crashes or `swing_animation` component errors.
+
+---
+
+## 🎮 4. Connecting to Your Local Server
+
+1. **Start the Server**: Open PowerShell inside your server directory and boot up the server via command:
+```powershell
+java --enable-native-access=ALL-UNNAMED -Xmx4G -Xms2G -jar fabric-server-launch.jar nogui
+
+```
+
+
+2. **Launch the Client**: Open `TLauncher`, ensure your profile is explicitly set to **Fabric** (matching your server version), and click *Enter the Game*.
+3. **Join Multiplayer**: Navigate to `Multiplayer` -> `Direct Connection` (or add a server) and connect using your loopback address:
+```text
+127.0.0.1
+
+```
+
+
+
+---
+
+## ⌨️ 5. Useful Commands & Settings
+
+Use these controls directly in your server console (without a slash `/`) or in-game via chat (provided you have operator permissions via `op <username>`):
+
+### **Environment & Time Manipulation**
+
+* Set time to daytime:
+```text
+/time set day
+
+```
+
+
+* Set time to nighttime:
+```text
+/time set night
+
+```
+
+
+* Clear active weather conditions:
+```text
+/weather clear
+
+```
+
+
+* Lock weather cycles permanently (disables rain/snow cycles):
+```text
+/gamerule doWeatherCycle false
+
+```
+
+
+
+### **Item & Game Mode Shortcuts**
+
+* Switch to Creative Mode (to access modded gun tabs directly from your inventory menu):
+```text
+/gamemode creative
+
+```
+
+
+* Switch back to Survival Mode:
+```text
+/gamemode survival
+
+```
+

@@ -1,7 +1,3 @@
-Here is a comprehensive markdown-formatted summary of Minecraft Java Edition hosting, client setup, mod installation, and useful commands. You can copy and paste this directly into a `.md` file for your GitHub repository.
-
----
-
 # Minecraft Java Edition: Local Server & Fabric Modding Guide
 
 This guide covers setting up a local Minecraft Java Edition server, configuring TLauncher, installing custom content loader dependencies, adding weapon mods safely, and utilizing essential server management commands.
@@ -16,9 +12,10 @@ To host a local modded survival server and connect to it using TLauncher, ensure
 * **Fabric Server Launcher**: Downloaded from the [Fabric Official Website](https://fabricmc.net/).
 * **TLauncher**: Used as your game client gateway. Download it safely from the [TLauncher Official Website](https://tlauncher.org/).
 * **Mods for Guns**: Downloaded from the [Just Enough Guns New(unofficial port)](https://modrinth.com/mod/just-enough-guns-neoforge).
-1. **Download and Install Java 21/25:**
+* Optional if you don't want to use current Java:
+* 1. **Download and Install Java 21/25:**
 Go to an official provider like [Eclipse Temurin (Adoptium)](https://adoptium.net/) or Oracle, download and install **Java 21/25** for Windows.
-2. **Run it with the Java 25 Path:**
+* 2. **Run it with the Java 25 Path:**
 Once installed, point your terminal directly to your Java 25 executable. For example:
 ```cmd
 & "C:\Program Files\Eclipse Adoptium\jdk-25.x.x.x-hotspot\bin\java.exe" -Xmx4G -Xms4G -jar .\server.jar nogui

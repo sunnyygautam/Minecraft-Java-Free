@@ -12,7 +12,7 @@ To host a local modded survival server and connect to it using TLauncher, ensure
 * **Fabric Server Launcher**: Downloaded from the [Fabric Official Website](https://fabricmc.net/).
 * **TLauncher**: Used as your game client gateway. Download it safely from the [TLauncher Official Website](https://tlauncher.org/).
 * **Mods for Guns**: Downloaded from the [Just Enough Guns New(unofficial port)](https://modrinth.com/mod/just-enough-guns-neoforge).
-* Optional if you don't want to use current Java:
+* **Optional**:
   1. **Download and Install Java 21/25:**
 Go to an official provider like [Eclipse Temurin (Adoptium)](https://adoptium.net/) or Oracle, download and install **Java 21/25** for Windows.
   2. **Run it with the Java 25 Path:**
@@ -21,7 +21,7 @@ Once installed, point your terminal directly to your Java 25 executable. For exa
 & "C:\Program Files\Eclipse Adoptium\jdk-25.x.x.x-hotspot\bin\java.exe" -Xmx4G -Xms4G -jar .\server.jar nogui
 
 ```
-* Minecraft Backup files from my machine: [Minecraft-Backup - Google Drive](https://drive.google.com/file/d/1YLli7yIogrKlpO_-tm9bAGUzjPeYFi_J/view?usp=drive_link).
+* Minecraft Backup files from my machine: [Minecraft-Backup - Google Drive](https://drive.google.com/drive/folders/1ZHw3i-U6orAgEEHHLr02VTNUj8ZVFCTk?usp=drive_link).
 
 *(Make sure to check your actual installation directory under `C:\Program Files\Eclipse Adoptium\` or `C:\Program Files\Java\` to match the exact path).*
 
